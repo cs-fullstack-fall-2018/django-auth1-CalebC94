@@ -8,7 +8,7 @@ def index(request):
     context = {'form_list': form_list}
     return render(request, 'blog_app/index.html', context)
 
-
+@login_required
 def userIndex(request):
     form_list = FormModel.objects.filter(user=request.user)
     context = {'form_list': form_list}
